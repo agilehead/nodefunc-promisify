@@ -4,13 +4,13 @@
     "email": "jeswinpk@agilehead.com"
   },
   "name": "nodefunc-promisify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Converts a node style function (which takes a callback) into one that returns a promise.",
   "repository": {
     "type": "git",
     "url": "https://github.com/jeswin/nodefunc-promisify.git"
   },
-  "main": "dist",
+  "main": "lib/nodefunc-promisify",
   "dependencies": {},
   "devDependencies": {},
   "engines": {
