@@ -1,2 +1,3 @@
-# nodefunc-promisify
-Convert an node style function to one that returns a promise
+nodefunc-promisify
+==================
+Converts a node style function (which takes a callback) into one that returns a promise.

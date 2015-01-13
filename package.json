@@ -1,0 +1,35 @@
+{
+  "author": {
+    "name": "Jeswin Kumar",
+    "email": "jeswinpk@agilehead.com"
+  },
+  "name": "nodefunc-promisify",
+  "version": "0.1.0",
+  "description": "Converts a node style function (which takes a callback) into one that returns a promise.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeswin/nodefunc-promisify.git"
+  },
+  "main": "dist",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.11.9"
+  },
+  "keywords": [
+    "async, flow-control"
+  ],
+  "license": "GPL-3.0+",
+  "gitHead": "c503b628639c6dbc96a72e777da46e99a0fbbc4b",
+  "bugs": {
+    "url": "https://github.com/jeswin/nodefunc-promisify/issues"
+  },
+  "homepage": "https://github.com/jeswin/nodefunc-promisify",
+  "scripts": {},
+  "maintainers": [
+    {
+      "name": "jeswin",
+      "email": "jeswinpk@agilehead.com"
+    }
+  ]
+}
