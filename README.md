@@ -15,10 +15,10 @@ var promisify = require("nodefunc-promisify");
 var func_returning_promise = promisify(someFuncTakingACallback [, firstParamInCbIsAnError: boolean])
 ```
 
-If firstParamInCbIsAnError is not set to true, someFuncTakingACallback is assumed to take a callback of the form (err, result) => void OR (err, r1, r2, ...) => void
+If firstParamInCbIsAnError is not set to true, someFuncTakingACallback is assumed to take a callback of the form (err, result) => void OR (err, r1, r2, ...) => void  
 if firstParamInCbIsAnError is true, the callback is assumed to be (result) => void OR (r1, r2, ...) => void
 
-If the callback passed to someFuncTakingACallback receives only one value (eg: result), the Promise is resolved with that value.
+If the callback passed to someFuncTakingACallback receives only one value (eg: result), the Promise is resolved with that value.  
 If the callback passed to someFuncTakingACallback receives multiple values (eg: r1, r2, ...), the Promise is resolved with an array.
 
 
