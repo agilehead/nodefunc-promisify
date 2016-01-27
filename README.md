@@ -12,14 +12,14 @@ Usage
 ------
 ```
 var promisify = require("nodefunc-promisify");
-var func_returning_promise = promisify(someFuncTakingACallback [, firstParamInCbIsAnError: boolean])
+var func_returning_promise = promisify(nodeFunc [, noErrorParamInCallback: boolean])
 ```
 
-If firstParamInCbIsAnError is not set to true, someFuncTakingACallback is assumed to take a callback of the form (err, result) => void OR (err, r1, r2, ...) => void  
-if firstParamInCbIsAnError is true, the callback is assumed to be (result) => void OR (r1, r2, ...) => void
+If noErrorParamInCallback is not set to true, nodeFunc is assumed to take a callback of the form (err, result) => void OR (err, r1, r2, ...) => void  
+if noErrorParamInCallback is true, the callback is assumed to be (result) => void OR (r1, r2, ...) => void
 
-If the callback passed to someFuncTakingACallback receives only one value (eg: result), the Promise is resolved with that value.  
-If the callback passed to someFuncTakingACallback receives multiple values (eg: r1, r2, ...), the Promise is resolved with an array.
+If the callback passed to nodeFunc receives only one value (eg: result), the Promise is resolved with that value.  
+If the callback passed to nodeFunc receives multiple values (eg: r1, r2, ...), the Promise is resolved with an array.
 
 
 Supports functions of the following types:
