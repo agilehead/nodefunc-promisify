@@ -3,25 +3,27 @@ nodefunc-promisify
 Converts a node style function (which takes a callback) into one that returns a promise.
 
 Installation
+------------
 ```
 npm install nodefunc-promisify
 ```
 
 Usage
+------
 ```
 var promisify = require("nodefunc-promisify");
 var func_returning_promise = promisify(someFuncTakingACallback [, firstParamInCbIsAnError: boolean])
+```
 
 If firstParamInCbIsAnError is not set to true, someFuncTakingACallback is assumed to take a callback of the form (err, result) => void OR (err, r1, r2, ...) => void
 if firstParamInCbIsAnError is true, the callback is assumed to be (result) => void OR (r1, r2, ...) => void
 
 If the callback passed to someFuncTakingACallback receives only one value (eg: result), the Promise is resolved with that value.
 If the callback passed to someFuncTakingACallback receives multiple values (eg: r1, r2, ...), the Promise is resolved with an array.
-```
 
 
 Supports functions of the following types:
-
+------------------------------------------
 fn(p1, p2, ... pN, cb) => void, where cb = (err, result) => void
 ```
 var sayHello = function(str, cb) {
