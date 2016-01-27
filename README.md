@@ -37,7 +37,7 @@ return promise.then(function(val) {
 });
 ```
 
-fn(p1, p2, ... pN, cb) => void, where cb = (err, r1, r2, r3) => void
+fn(p1, p2, ... pN, cb) => void, where cb = (result) => void
 ```
 var sayHelloWithoutError = function(str, cb) {
   return cb("Hello " + str);
@@ -50,7 +50,7 @@ return promise.then(function(val) {
 });
 ```
 
-fn(p1, p2, ... pN, cb) => void, where cb = (result) => void
+fn(p1, p2, ... pN, cb) => void, where cb = (err, r1, r2, r3) => void
 ```
 var sayHelloAndMaster = function(str, cb) {
   return cb(null, "Hello " + str, "Master");
@@ -67,6 +67,10 @@ return promise.then(function(val) {
 fn(p1, p2, ... pN, cb) => void, where cb = (r1, r2, r3) => void
 
 ```
+var sayHelloAndMasterWithoutError = function(str, cb) {
+  return cb("Hello " + str, "Master");
+};
+
 var promisify = require("../lib/nodefunc-promisify");
 var fn = promisify(sayHelloAndMasterWithoutError, true);
 var promise = fn("world");
