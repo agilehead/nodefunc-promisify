@@ -5,6 +5,18 @@ var sayHello = function(str, cb) {
   return cb(null, "Hello " + str);
 };
 
+var sayHelloWithoutError = function(str, cb) {
+  return cb("Hello " + str);
+};
+
+var sayHelloAndMaster = function(str, cb) {
+  return cb(null, "Hello " + str, "Master");
+};
+
+var sayHelloAndMasterWithoutError = function(str, cb) {
+  return cb("Hello " + str, "Master");
+};
+
 var throwError = function(str, cb) {
   return cb("Some error", "Hello " + str);
 };
@@ -15,6 +27,32 @@ describe("Nodefunc Promisify", function() {
     var promise = fn("world");
     return promise.then(function(val) {
       val.should.equal("Hello world");
+    });
+  });
+
+  it(`If callback has multiple parameters, return an array`, function() {
+    var fn = promisify(sayHelloAndMaster);
+    var promise = fn("world");
+    return promise.then(function(val) {
+      val[0].should.equal("Hello world");
+      val[1].should.equal("Master");
+    });
+  });
+
+  it(`Convert a node func (without err param) to a generator func returning a promise`, function() {
+    var fn = promisify(sayHelloWithoutError, true);
+    var promise = fn("world");
+    return promise.then(function(val) {
+      val.should.equal("Hello world");
+    });
+  });
+
+  it(`If callback (without err param) has multiple parameters, return an array`, function() {
+    var fn = promisify(sayHelloAndMasterWithoutError, true);
+    var promise = fn("world");
+    return promise.then(function(val) {
+      val[0].should.equal("Hello world");
+      val[1].should.equal("Master");
     });
   });
 
