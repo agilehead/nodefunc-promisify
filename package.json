@@ -4,7 +4,7 @@
     "email": "jeswinpk@agilehead.com"
   },
   "name": "nodefunc-promisify",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Converts a node style function (which takes a callback) into one that returns a promise.",
   "scripts": {
     "test": "mocha test/test.js"
@@ -25,7 +25,7 @@
   "keywords": [
     "async, flow-control"
   ],
-  "license": "GPL-3.0+",
+  "license": "MIT",
   "gitHead": "c503b628639c6dbc96a72e777da46e99a0fbbc4b",
   "bugs": {
     "url": "https://github.com/jeswin/nodefunc-promisify/issues"
