@@ -31,7 +31,7 @@ describe("Nodefunc Promisify", function() {
   });
 
   it(`If callback has multiple parameters, return an array`, function() {
-    var fn = promisify(sayHelloAndMaster);
+    var fn = promisify(sayHelloAndMaster, { hasMultipleResults: true });
     var promise = fn("world");
     return promise.then(function(val) {
       val[0].should.equal("Hello world");
@@ -40,7 +40,7 @@ describe("Nodefunc Promisify", function() {
   });
 
   it(`Convert a node func (without err param) to a generator func returning a promise`, function() {
-    var fn = promisify(sayHelloWithoutError, true);
+    var fn = promisify(sayHelloWithoutError, { noErrorParameter: true });
     var promise = fn("world");
     return promise.then(function(val) {
       val.should.equal("Hello world");
@@ -48,7 +48,7 @@ describe("Nodefunc Promisify", function() {
   });
 
   it(`If callback (without err param) has multiple parameters, return an array`, function() {
-    var fn = promisify(sayHelloAndMasterWithoutError, true);
+    var fn = promisify(sayHelloAndMasterWithoutError, { noErrorParameter: true, hasMultipleResults: true });
     var promise = fn("world");
     return promise.then(function(val) {
       val[0].should.equal("Hello world");
