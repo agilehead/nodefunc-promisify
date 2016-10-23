@@ -4,7 +4,7 @@
     "email": "jeswinpk@agilehead.com"
   },
   "name": "nodefunc-promisify",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Converts a node style function (which takes a callback) into one that returns a promise.",
   "scripts": {
     "test": "mocha test/test.js"

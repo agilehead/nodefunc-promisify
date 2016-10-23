@@ -23,11 +23,11 @@ var options = {
 }
 ```
 
-If options.noErrorParameter is false (default), nodeFunc is assumed to take a callback of the form (err, result) => void OR (err, r1, r2, ...) => void  
-if options.noErrorParameter is set to true, the callback is assumed to be (result) => void OR (r1, r2, ...) => void
+If options.noErrorParameter is false (default), nodeFunc is assumed to take a standard node callback in which the first parameter denotes the error. For example, a callback like function(err, result) { .... }  
+If set to true, the callback is assumed to not contain the error parameter. For example, a callback like function(result) { .... }
 
-If options.hasMultipleResults is false (default), nodeFunc is assumed to return a single value via the callback.
-if options.hasMultipleResults is set to true, the callback is assumed to return multiple values. The promise resolves with an array containing multiple results.
+If options.hasMultipleResults is false (default), nodeFunc is assumed to return a single value via the callback. For example, a callback like function(err, result) { .... }  
+if true, the callback is assumed to return multiple values. The promise resolves with an array containing multiple results. For example, a callback like function(err, result1, result2) { .... }
 
 options.noErrorParameter and options.hasMultipleResults may be used together.
 
